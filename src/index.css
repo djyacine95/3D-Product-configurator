@@ -212,64 +212,75 @@ p {
   color: var(--ink);
 }
 
-.viewer-card {
+.example-card {
   background: linear-gradient(180deg, #2a211b 0%, #171310 100%);
   border-radius: 24px;
-  height: 480px;
-  position: relative;
   overflow: hidden;
   box-shadow: 0 30px 60px rgba(26, 20, 16, 0.18);
+  color: #ead9c6;
 }
 
-.viewer-card > div {
-  width: 100%;
-  height: 100%;
+.example-intro {
+  padding: 32px 32px 26px;
+  display: grid;
+  gap: 10px;
 }
 
-.viewer-card canvas {
+.example-intro .eyebrow {
+  color: var(--brass);
+}
+
+.example-intro h2 {
+  color: var(--white);
+  font-size: clamp(1.8rem, 3vw, 2.6rem);
+}
+
+.example-intro p:last-child {
+  color: #cbbbab;
+}
+
+.example-links {
+  border-top: 1px solid rgba(255, 255, 255, 0.12);
+}
+
+.example-links a {
+  display: grid;
+  grid-template-columns: auto 1fr auto;
+  gap: 16px;
+  align-items: center;
+  padding: 17px 24px;
+  text-decoration: none;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+  transition: background 160ms ease;
+}
+
+.example-links a:last-child {
+  border-bottom: 0;
+}
+
+.example-links a:hover {
+  background: rgba(255, 255, 255, 0.07);
+}
+
+.example-number,
+.example-links small {
+  color: #ac9987;
+  font-size: 0.78rem;
+}
+
+.example-links strong,
+.example-links small {
   display: block;
 }
 
-.viewer-ui {
-  position: absolute;
-  left: 16px;
-  right: 16px;
-  bottom: 16px;
-  display: flex;
-  justify-content: space-between;
-  gap: 12px;
-  align-items: end;
-  pointer-events: none;
+.example-links strong {
+  color: var(--white);
+  font-weight: 500;
 }
 
-.viewer-ui > * {
-  pointer-events: auto;
-}
-
-.swatches {
-  display: flex;
-  gap: 8px;
-}
-
-.swatch {
-  width: 28px;
-  height: 28px;
-  border-radius: 50%;
-  border: 2px solid rgba(255, 255, 255, 0.35);
-  cursor: pointer;
-  padding: 0;
-}
-
-.swatch.active {
-  outline: 2px solid var(--brass);
-  outline-offset: 2px;
-}
-
-.viewer-caption {
-  color: #ead9c6;
-  font-size: 12px;
-  letter-spacing: 0.08em;
-  text-transform: uppercase;
+.example-arrow {
+  color: var(--brass);
+  font-size: 1.2rem;
 }
 
 .section {
@@ -523,10 +534,6 @@ p {
 
   .nav {
     display: none;
-  }
-
-  .viewer-card {
-    height: 380px;
   }
 
   .site-footer {

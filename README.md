@@ -23,4 +23,4 @@ Open the URL Vite prints (usually `http://localhost:5173`).
 
 ## Stack
 
-React, Vite, TypeScript, Three.js (`@react-three/fiber`) for the live chair demo.
+React, Vite and TypeScript, with links to four live product configuration examples.

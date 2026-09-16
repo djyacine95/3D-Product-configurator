@@ -1,9 +1,27 @@
-import { lazy, Suspense, useState } from 'react'
 import { LeadForm } from './components/LeadForm'
 
-const ChairDemo = lazy(() =>
-  import('./components/ChairDemo').then((module) => ({ default: module.ChairDemo })),
-)
+const examples = [
+  {
+    name: 'Boxspring Gelderland',
+    type: 'Furniture configurator',
+    url: 'https://3dconfigure.nl/boxspringgelderland/',
+  },
+  {
+    name: 'RealTruck Builder',
+    type: 'Vehicle accessories builder',
+    url: 'https://realtruck.com/builder/',
+  },
+  {
+    name: 'Skylux Configurator',
+    type: 'Rooflight configurator',
+    url: 'https://config.skylux.eu/#/codes/U9XLOYFR?languageCode=en',
+  },
+  {
+    name: 'World of Epiroc',
+    type: 'Interactive product experience',
+    url: 'https://www.epiroc.com/en-au/world-of-epiroc?hotspot=0',
+  },
+]
 
 const drivers = [
   {
@@ -14,7 +32,7 @@ const drivers = [
   {
     num: '02',
     title: 'Number of products',
-    body: 'One configurable chair is a contained project. A hundred pieces of furniture is a catalog system.',
+    body: 'One configurable product is a contained project. A hundred pieces of furniture is a catalog system.',
   },
   {
     num: '03',
@@ -86,8 +104,6 @@ const process = [
 ]
 
 export default function App() {
-  const [fabric, setFabric] = useState('#c4a484')
-
   return (
     <>
       <header className="site-header">
@@ -132,9 +148,25 @@ export default function App() {
               </a>
             </div>
           </div>
-          <Suspense fallback={<div className="viewer-card" />}>
-            <ChairDemo fabric={fabric} onFabric={setFabric} />
-          </Suspense>
+          <div className="example-card">
+            <div className="example-intro">
+              <p className="eyebrow">Live examples</p>
+              <h2>See product configuration in action.</h2>
+              <p>Explore four live experiences across furniture, automotive, construction and industrial equipment.</p>
+            </div>
+            <div className="example-links">
+              {examples.map((example, index) => (
+                <a href={example.url} target="_blank" rel="noreferrer" key={example.name}>
+                  <span className="example-number">{String(index + 1).padStart(2, '0')}</span>
+                  <span>
+                    <strong>{example.name}</strong>
+                    <small>{example.type}</small>
+                  </span>
+                  <span className="example-arrow" aria-hidden="true">↗</span>
+                </a>
+              ))}
+            </div>
+          </div>
         </section>
 
         <section className="section" id="scope">
