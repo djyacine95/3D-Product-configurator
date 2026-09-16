@@ -1,0 +1,2 @@
+- [GitHub publishing](github-push.md) — use the authenticated connector API when the shell Git remote cannot access connector credentials.
+- [Portable Vite hosting](portable-vite.md) — avoid platform-bound ports, hosts, and package registry URLs.

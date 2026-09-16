@@ -5,11 +5,24 @@ Lead-generation site for a **3D Product Configurator / Interactive Web Solutions
 ## Run locally
 
 ```bash
-npm install
+npm ci
 npm run dev
 ```
 
 Open the URL Vite prints (usually `http://localhost:5173`).
+
+## Build and deploy
+
+This is a client-side Vite app with no platform-specific runtime requirements.
+
+```bash
+npm ci
+npm run build
+```
+
+Deploy the generated `dist/` directory to any static host. For a Node-based
+host, run `npm start`; the preview server honors the host's `PORT` environment
+variable and falls back to port `5173`.
 
 ## What the site does
 
